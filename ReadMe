@@ -1,0 +1,7 @@
+Close Chrome first:
+
+taskkill /F /IM chrome.exe
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="$env:TEMP\meet-chrome"
+
+.\.venv\Scripts\activate
+python main.py
