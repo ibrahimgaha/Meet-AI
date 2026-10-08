@@ -1,9 +1,53 @@
-Close Chrome first:
+# Meet-AI 🤖
 
-taskkill /F /IM chrome.exe
-& "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="$env:TEMP\meet-chrome"
+**Meet-AI** is an AI-powered meeting assistant that records meetings, transcribes conversations, identifies speakers, and automatically generates summaries and PDF reports.
 
-.\.venv\Scripts\activate
-python main.py
+## 🚀 Getting Started
 
-uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+### 1. Start the application
+
+* Double-click `start_meet_ai.bat`.
+* Wait for the backend to start.
+* Open your browser and go to `http://localhost:8000`.
+
+### 2. Start a meeting
+
+* Create or open a Google Meet meeting.
+* Copy the meeting link and paste it into Meet-AI.
+* Click **Connect** and allow the application to join the meeting.
+* Once connected, the application starts tracking participants and recording audio.
+
+### 3. Finish the meeting
+
+* End the meeting or stop it using the application.
+* Meet-AI processes the audio and generates the transcript.
+* The AI analyzes the conversation and extracts the key points, decisions, and action items.
+
+### 4. View your results
+
+After processing, open the meeting from the dashboard to access:
+
+* 📝 **Transcript:** the meeting conversation in text form.
+* 🤖 **AI Analysis:** a summary of the discussion, decisions, and tasks.
+* 📄 **PDF Report:** a downloadable report of the meeting.
+
+Previous meetings and their files are stored separately in the `meetings/` directory.
+
+## ⚙️ Requirements
+
+* Windows
+* Python and the project's virtual environment
+* Google Chrome
+* FFmpeg
+* A valid OpenRouter API key configured in `.env`
+
+## 🔐 Notes
+
+* Keep your API key private; never publish your `.env` file.
+* Make sure Chrome is running with the required remote debugging configuration.
+* Audio transcription and AI analysis may take some time, depending on the meeting duration and available resources.
+* Inform participants and obtain any required consent before recording meetings.
+
+---
+
+**Meet-AI — Spend less time taking notes and more time in the conversation.**
