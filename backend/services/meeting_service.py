@@ -183,7 +183,8 @@ class MeetingService:
             self.update_state(state, MeetingStatus.error, f"Meeting error: {err_msg}", error=err_msg)
         finally:
             state.ended_at = datetime.now().isoformat()
-            self.update_state(state, MeetingStatus.ending, "Meeting ended. Finalizing audio recording...")
+            if state.status != MeetingStatus.error:
+                self.update_state(state, MeetingStatus.ending, "Meeting ended. Finalizing audio recording...")
 
             # Leave meeting if page open
             if page:
